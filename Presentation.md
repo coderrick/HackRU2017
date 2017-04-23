@@ -6,4 +6,5 @@ APP NAME - Prism
 3) What the app does
 * Monitors brain wave while reading or watching a video. If use is not concentrating the video will stop of the webpage will stop being 
   viewable (if reading)
-4)
+  
+  Presentation Link: https://slides.com/viratmahant/rotation/live 
