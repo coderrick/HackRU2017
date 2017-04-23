@@ -1,0 +1,15 @@
+{
+  "manifest_version": 2,
+
+  "name": "BrainPlayer Plugin",
+  "description": "This extension will play and pause video based on brain waves",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "ios-magic-mind-icon.png",
+   "default_popup": "popUp.html"
+  },
+  "permissions": [
+   "activeTab"
+   ]
+}
