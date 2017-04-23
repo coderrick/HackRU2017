@@ -5,11 +5,17 @@
   "description": "This extension will play and pause video based on brain waves",
   "version": "1.0",
 
-  "browser_action": {
-   "default_icon": "ios-magic-mind-icon.png",
-   "default_popup": "popUp.html"
-  },
+  
   "permissions": [
-   "activeTab"
-   ]
+
+    "tabs"
+
+  ],
+  "content_scripts": [{
+
+    "matches": ["*://www.youtube.com/*"],
+
+    "js": ["popUp.js"]
+
+  }]
 }

@@ -1,20 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var checkPageButton = document.getElementById('Play');
-  checkPageButton.addEventListener('click', function() {
+var blacklist = ['', 'masthead-search-term', 'movie_player'];
 
-    chrome.tabs.getSelected(null, function(tab) {
-      d = document;
+window.onkeydown = function (e) {
+  var active = document.activeElement.id;
+  if (e.keyCode === 68 && blacklist.indexOf(active) < 0) {
+    var video = document.getElementsByTagName("video")[0];
+    if (video.paused) {
+      video.play();
+    }
+    else {
+      video.pause();
+    }
 
-      var f = d.createElement('form');
-      f.action = 'http://gtmetrix.com/analyze.html?bm';
-      f.method = 'post';
-      var i = d.createElement('input');
-      i.type = 'hidden';
-      i.name = 'url';
-      i.value = tab.url;
-      f.appendChild(i);
-      d.body.appendChild(f);
-      f.submit();
-    });
-  }, false);
-}, false);
+    return false;
+  }else if(e.keyCode === 66 )
+  {
+	  var op = document.getElementById("body").style.opacity;
+	  if(op === "0")
+	  {
+		 //document.body.style.backgroundColor = "black";
+	  document.getElementById("body").style.opacity = "100"; 
+	  }else{
+		document.getElementById("body").style.opacity = "0";   
+	  }
+	  
+  }
+};
